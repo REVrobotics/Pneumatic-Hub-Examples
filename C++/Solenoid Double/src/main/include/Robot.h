@@ -4,8 +4,13 @@
 
 #pragma once
 
+#include <frc/PneumaticHub.h>
 #include <frc/DoubleSolenoid.h>
 #include <frc/TimedRobot.h>
+
+#define PH_CAN_ID 1
+#define SOLENOID_FORWARD_CHANNEL 0
+#define SOLENOID_REVERSE_CHANNEL 1
 
 class Robot : public frc::TimedRobot {
 public:
@@ -21,8 +26,6 @@ public:
   void TestPeriodic() override;
 
 private:
-  const int forwardChannel = 0;
-  const int reverseChannel = 1;
-  frc::DoubleSolenoid m_doubleSolenoid{frc::PneumaticsModuleType::REVPH,
-                                       forwardChannel, reverseChannel};
+  frc::PneumaticHub m_PH{PH_CAN_ID};
+  frc::DoubleSolenoid m_doubleSolenoid= m_PH.MakeDoubleSolenoid(SOLENOID_FORWARD_CHANNEL,SOLENOID_REVERSE_CHANNEL);
 };

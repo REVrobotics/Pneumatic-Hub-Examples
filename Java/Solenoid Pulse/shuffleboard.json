@@ -9,6 +9,7 @@
         "showGrid": true,
         "hgap": 16.0,
         "vgap": 16.0,
+        "titleType": 0,
         "tiles": {
           "2,0": {
             "size": [
@@ -41,8 +42,8 @@
             ],
             "content": {
               "_type": "Text View",
-              "_source0": "network_table:///SmartDashboard/Pulse Duration (s)",
-              "_title": "Pulse Duration (s)"
+              "_source0": "network_table:///SmartDashboard/Pulse Duration (ms)",
+              "_title": "Pulse Duration (ms)"
             }
           }
         }
@@ -57,6 +58,7 @@
         "showGrid": true,
         "hgap": 16.0,
         "vgap": 16.0,
+        "titleType": 0,
         "tiles": {
           "0,0": {
             "size": [

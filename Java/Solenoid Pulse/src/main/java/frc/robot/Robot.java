@@ -4,13 +4,17 @@
 
 package frc.robot;
 
-import edu.wpi.first.wpilibj.PneumaticsModuleType;
+import edu.wpi.first.wpilibj.PneumaticHub;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Robot extends TimedRobot {
-  Solenoid m_solenoid = new Solenoid(PneumaticsModuleType.REVPH, 0);
+  private static final int PH_CAN_ID = 1;
+  private static final int SOLENOID_CHANNEL = 0;
+  PneumaticHub m_pH = new PneumaticHub(PH_CAN_ID);
+  Solenoid m_solenoid = m_pH.makeSolenoid(SOLENOID_CHANNEL);
+
   @Override
   public void robotInit() {
     // Add pulse controls to Shuffleboard
