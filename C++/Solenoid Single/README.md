@@ -5,6 +5,7 @@ This example shows how to use a single acting solenoid with the PH.
 
 ### Usage
 Things to check:
+* `PH_CAN_ID` in _src/include/Robot.h_ should match your device's CAN ID.
 * `teamNumber` in _.wpilib/wpilib_preferences.json_ should match your roboRIO's team number.
 
 Steps:

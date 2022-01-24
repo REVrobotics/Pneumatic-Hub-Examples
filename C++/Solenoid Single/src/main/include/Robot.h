@@ -4,8 +4,12 @@
 
 #pragma once
 
+#include <frc/PneumaticHub.h>
 #include <frc/Solenoid.h>
 #include <frc/TimedRobot.h>
+
+#define PH_CAN_ID 1
+#define SOLENOID_CHANNEL 0
 
 class Robot : public frc::TimedRobot {
 public:
@@ -21,5 +25,6 @@ public:
   void TestPeriodic() override;
 
 private:
-  frc::Solenoid m_solenoid{frc::PneumaticsModuleType::REVPH, 0};
+  frc::PneumaticHub m_PH{PH_CAN_ID};
+  frc::Solenoid m_solenoid= m_PH.MakeSolenoid(SOLENOID_CHANNEL);
 };

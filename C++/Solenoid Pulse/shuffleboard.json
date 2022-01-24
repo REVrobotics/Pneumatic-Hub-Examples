@@ -9,6 +9,7 @@
         "showGrid": true,
         "hgap": 16.0,
         "vgap": 16.0,
+        "titleType": 0,
         "tiles": {
           "2,0": {
             "size": [
@@ -21,7 +22,7 @@
               "_title": "Start Pulse"
             }
           },
-          "4,0": {
+          "3,0": {
             "size": [
               1,
               1
@@ -34,15 +35,28 @@
               "Colors/Color when false": "#8B0000FF"
             }
           },
-          "0,0": {
+          "0,1": {
             "size": [
               2,
               1
             ],
             "content": {
               "_type": "Text View",
-              "_source0": "network_table:///SmartDashboard/Pulse Duration (s)",
-              "_title": "Pulse Duration (s)"
+              "_source0": "network_table:///SmartDashboard/Pulse Duration (ms)",
+              "_title": "Pulse Duration (ms)"
+            }
+          },
+          "4,0": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Boolean Box",
+              "_source0": "network_table:///SmartDashboard/Set Solenoid",
+              "_title": "Set Solenoid",
+              "Colors/Color when true": "#7CFC00FF",
+              "Colors/Color when false": "#8B0000FF"
             }
           }
         }
@@ -57,6 +71,7 @@
         "showGrid": true,
         "hgap": 16.0,
         "vgap": 16.0,
+        "titleType": 0,
         "tiles": {
           "0,0": {
             "size": [
@@ -73,6 +88,13 @@
                   "_type": "Boolean Box",
                   "_source0": "network_table:///LiveWindow/Ungrouped/Solenoid[1,0]/Value",
                   "_title": "Solenoid[1,0]/Value",
+                  "Colors/Color when true": "#7CFC00FF",
+                  "Colors/Color when false": "#8B0000FF"
+                },
+                {
+                  "_type": "Boolean Box",
+                  "_source0": "network_table:///LiveWindow/Ungrouped/Solenoid[9,0]/Value",
+                  "_title": "Solenoid[9,0]/Value",
                   "Colors/Color when true": "#7CFC00FF",
                   "Colors/Color when false": "#8B0000FF"
                 }

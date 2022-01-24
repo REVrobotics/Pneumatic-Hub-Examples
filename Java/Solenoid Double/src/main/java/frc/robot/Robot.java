@@ -4,16 +4,17 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.PneumaticHub;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
-import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Robot extends TimedRobot {
-  
+  private static final int PH_CAN_ID = 1;
   private static int forwardChannel =0;
   private static int reverseChannel =1;
-  DoubleSolenoid m_doubleSolenoid = new DoubleSolenoid(PneumaticsModuleType.REVPH,forwardChannel,reverseChannel );
+  PneumaticHub m_pH = new PneumaticHub(PH_CAN_ID);
+  DoubleSolenoid m_doubleSolenoid = m_pH.makeDoubleSolenoid(forwardChannel,reverseChannel);
 
   @Override
   public void robotInit() {
